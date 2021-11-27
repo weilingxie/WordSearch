@@ -27,8 +27,10 @@ namespace WordSearch
                 var currentLocation = new Tuple<int, int>(row, col);
                 visit.Add(currentLocation);
 
-                node = node.Children[grid[row, col]];
-                word += grid[row, col];
+                var currentChar = grid[row, col];
+                node = node.Children[currentChar];
+                word += currentChar;
+                
                 if (node.IsEnd)
                 {
                     var result = new Result()
