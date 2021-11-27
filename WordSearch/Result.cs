@@ -37,5 +37,10 @@ namespace WordSearch
         {
             return !Equals(left, right);
         }
+
+        public override string ToString()
+        {
+            return $"{Word} found at ({StartPoint.Item1},{StartPoint.Item2}) to ({EndPoint.Item1}, {EndPoint.Item2})";
+        }
     }
 }

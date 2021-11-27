@@ -58,13 +58,13 @@ namespace WordSearch
             Console.WriteLine("------------------------------");
 
             var result = Solution.FindWords(Grid, Words);
-            Console.Write($"Found {result.Count} matching");
+            Console.WriteLine($"Found {result.Count} matching");
             //Find each of the words in the grid, outputting the start and end location of
             //each word, e.g.
             //PUPPY found at (10,7) to (10, 3) 
             result.ForEach(w =>
             {
-                Console.WriteLine($"{w.Word} found at ({w.StartPoint.Item1},{w.StartPoint.Item2}) to ({w.EndPoint.Item1}, {w.EndPoint.Item2})");
+                Console.WriteLine(w.ToString());
             });
 
             Console.WriteLine("------------------------------");
@@ -72,15 +72,5 @@ namespace WordSearch
             Console.WriteLine("Press any key to end");
             Console.ReadKey();
         }
-        
-
-        // private static void FindWords()
-        // {
-        //     //Find each of the words in the grid, outputting the start and end location of
-        //     //each word, e.g.
-        //     //PUPPY found at (10,7) to (10, 3) 
-        // }
-        
-        
     }
 }
