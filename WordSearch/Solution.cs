@@ -6,6 +6,13 @@ namespace WordSearch
 {
     public static class Solution
     {
+        /// <summary>
+        /// 1.Create a tire (prefix tree) for the list of words
+        /// 2.Loop each location in the grid to find match word in the trie using DFS and Backtracking
+        /// </summary>
+        /// <param name="grid">A two dimensional grid that each cell of it has a char</param>
+        /// <param name="words">The list of words that wants to find in the grid</param>
+        /// <returns>Return a list of result that each result has the matching word, the start location and end location</returns>
         public static List<Result> FindWords(char[,] grid, string[] words)
         {
             var trie = new Trie(words);
