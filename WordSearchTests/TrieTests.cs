@@ -4,7 +4,7 @@ using Xunit;
 
 namespace WordSearchTests
 {
-    public class UnitTest1
+    public class TrieTests
     {
         [Fact]
         public void WhenInitialATrie_ShouldHaveARootNodeByDefault()
