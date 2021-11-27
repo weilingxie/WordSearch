@@ -58,6 +58,7 @@ namespace WordSearch
             Console.WriteLine("------------------------------");
 
             var result = Solution.FindWords(Grid, Words);
+            Console.Write($"Found {result.Count} matching");
             //Find each of the words in the grid, outputting the start and end location of
             //each word, e.g.
             //PUPPY found at (10,7) to (10, 3) 

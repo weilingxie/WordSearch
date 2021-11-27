@@ -24,7 +24,8 @@ namespace WordSearch
                     return;
                 }
 
-                visit.Add(new Tuple<int, int>(row, col));
+                var currentLocation = new Tuple<int, int>(row, col);
+                visit.Add(currentLocation);
 
                 node = node.Children[grid[row, col]];
                 word += grid[row, col];
@@ -39,7 +40,7 @@ namespace WordSearch
                     results.Add(result);
                 }
 
-                // Move towards 8 direction
+                // Move towards 8 directions
                 dfs(row - 1, col, node, word);
                 dfs(row + 1, col, node, word);
                 dfs(row - 1, col - 1, node, word);
@@ -48,7 +49,7 @@ namespace WordSearch
                 dfs(row + 1, col + 1, node, word);
                 dfs(row, col - 1, node, word);
                 dfs(row, col + 1, node, word);
-                visit.Remove(new Tuple<int, int>(row, col));
+                visit.Remove(currentLocation);
             }
 
             for (var r = 0; r < rows; r++)
