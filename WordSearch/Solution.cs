@@ -15,7 +15,7 @@ namespace WordSearch
             var visit = new HashSet<Tuple<int, int>>();
             Tuple<int,int> startPoint;
 
-            void dfs(int row, int col, Node node, string word)
+            void Dfs(int row, int col, Node node, string word)
             {
                 if (row < 0 || col < 0 || row == rows || col == cols ||
                     visit.Contains(new Tuple<int, int>(row, col)) ||
@@ -43,14 +43,14 @@ namespace WordSearch
                 }
 
                 // Move towards 8 directions
-                dfs(row - 1, col, node, word);
-                dfs(row + 1, col, node, word);
-                dfs(row - 1, col - 1, node, word);
-                dfs(row + 1, col - 1, node, word);
-                dfs(row - 1, col + 1, node, word);
-                dfs(row + 1, col + 1, node, word);
-                dfs(row, col - 1, node, word);
-                dfs(row, col + 1, node, word);
+                Dfs(row - 1, col, node, word);
+                Dfs(row + 1, col, node, word);
+                Dfs(row - 1, col - 1, node, word);
+                Dfs(row + 1, col - 1, node, word);
+                Dfs(row - 1, col + 1, node, word);
+                Dfs(row + 1, col + 1, node, word);
+                Dfs(row, col - 1, node, word);
+                Dfs(row, col + 1, node, word);
                 visit.Remove(currentLocation);
             }
 
@@ -59,7 +59,7 @@ namespace WordSearch
                 for (var c = 0; c < cols; c++)
                 {
                     startPoint = new Tuple<int, int>(c, r);
-                    dfs(r, c, trie.Root, "");
+                    Dfs(r, c, trie.Root, "");
                 }
             }
             
