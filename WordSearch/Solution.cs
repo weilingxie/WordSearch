@@ -61,12 +61,12 @@ namespace WordSearch
                 visit.Remove(currentLocation);
             }
 
-            for (var r = 0; r < rows; r++)
+            for (var row = 0; row < rows; row++)
             {
-                for (var c = 0; c < cols; c++)
+                for (var col = 0; col < cols; col++)
                 {
-                    startPoint = new Tuple<int, int>(c, r);
-                    Dfs(r, c, trie.Root, "");
+                    startPoint = new Tuple<int, int>(col, row);
+                    Dfs(row, col, trie.Root, "");
                 }
             }
             
